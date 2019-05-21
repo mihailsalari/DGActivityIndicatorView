@@ -29,6 +29,33 @@ Add DGActivityIndicatorView to Podfile:
 ``` bash
 pod 'DGActivityIndicatorView'
 ```
+Example ussage:
+
+``` 
+private var hud: YBHud?
+
+extension UIViewController {
+  
+  func showHud(with text: String?) {
+    hud = YBHud(hudType: .triplePulse, andText: text ?? "")
+    
+    
+    if let keyWindow = UIApplication.shared.keyWindow {
+      hud?.show(in: keyWindow)
+    }
+  }
+  
+  func hideHud() {
+    hud?.dismiss(animated: true)
+  }
+}
+```
+
+
+Installation from one click, mixed with YBHud
+``` bash
+pod 'DGActivityIndicatorView', git: 'https://github.com/ThePowerOfSwift/DGActivityIndicatorView'
+```
 
 Call 'pod install':
 
